@@ -1,2 +1,8 @@
 # sumcoin-insight
-Shell script to build Insight Block explorer
+
+Shell script to auto build Sumcoin Insight Block explorer
+
+### Run 
+```
+./explorer.sh
+```
