@@ -46,7 +46,7 @@ wget -N https://github.com/sumcoinlabs/sumcoin/archive/v0.16.1.zip -O binary.zip
 unzip -o binary.zip
 
 # install insight api/ui
-../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoin/insight-api-sumcoin snowgem/insight-ui-sumcoin
+../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoinlabs/insight-sum-api sumcoinlabs/insight-sum-ui
 
 # create sumcore config file for sumcore
 cat << EOF > bitcore-node.json
