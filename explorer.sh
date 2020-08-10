@@ -36,17 +36,17 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 
 # install sumcoin version of bitcore
-npm install snowgem/bitcore-node-snowgem
+npm install bitcore-node-sumcoin
 
 # create bitcore node
-./node_modules/sumcore-node/bin/sumcore-node create sumcoin-explorer
+./node_modules/bitcore-node-sumcoin/bin/bitcore-node create sumcoin-explorer
 cd sumcoin-explorer
 
 wget -N https://github.com/sumcoinlabs/sumcoin/archive/v0.16.1.zip -O binary.zip
 unzip -o binary.zip
 
 # install insight api/ui
-../node_modules/sumcore-node/bin/bitcore-node install sumcoinlabs/insight-sum-api sumcoinlabs/insight-sum-ui
+../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoin/insight-api-sumcoin snowgem/insight-ui-sumcoin
 
 # create sumcore config file for sumcore
 cat << EOF > bitcore-node.json
@@ -78,7 +78,7 @@ EOF
 
 #need to sync blockchain again with indexed
 
-# create snowgem.conf
+# create sumcoin.conf
 cat << EOF > data/sumcoin.conf
 server=1
 whitelist=127.0.0.1
