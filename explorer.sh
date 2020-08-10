@@ -49,18 +49,18 @@ unzip -o binary.zip
 ../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoinlabs/insight-sum-api sumcoinlabs/insight-sum-ui
 
 # create sumcore config file for sumcore
-cat << EOF > bitcore-node.json
+cat << EOF > sumcore-node.json
 {
   "network": "mainnet",
   "port": 3001,
   "services": [
-    "bitcoind",
+    "sumcoind",
     "insight-sum-api",
     "insight-sum-ui",
     "web"
   ],
   "servicesConfig": {
-    "bitcoind": {
+    "sumcoind": {
       "spawn": {
         "datadir": "./data",
         "exec": "./sumcoind"
@@ -87,18 +87,18 @@ addressindex=1
 timestampindex=1
 #masternodeprotection=1
 spentindex=1
-zmqpubrawtx=tcp://127.0.0.1:8332
-zmqpubhashblock=tcp://127.0.0.1:8332
+zmqpubrawtx=tcp://127.0.0.1:3332
+zmqpubhashblock=tcp://127.0.0.1:3332
 rpcallowip=127.0.0.1
-rpcuser=bitcoin
-rpcpassword=local321
-uacomment=bitcore
+rpcuser=sumcoinusername
+rpcpassword=SecurePassword
+#uacomment=bitcore
 showmetrics=0
-rpcport=16112
+rpcport=3332
 maxconnections=100
 EOF
 
 cd ~/sumcoin-explorer
 
 echo "Start the block explorer, open in your browser http://server_ip:3001"
-# echo "./node_modules/sumcore-node/bin/bitcore-node start"
+# echo "./node_modules/bitcore-node-sumcoin/bin/bitcore-node start"
