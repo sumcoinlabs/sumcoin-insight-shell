@@ -46,7 +46,7 @@ wget -N https://github.com/sumcoinlabs/sumcoin/archive/v0.16.1.zip -O binary.zip
 unzip -o binary.zip
 
 # install insight api/ui
-../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoinlabs/insight-sum-api sumcoinlabs/insight-sum-ui
+../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoinlabs/insight-api-sumcoin sumcoinlabs/insight-ui-sumcoin
 
 # create sumcore config file for sumcore
 cat << EOF > sumcore-node.json
@@ -55,8 +55,8 @@ cat << EOF > sumcore-node.json
   "port": 3001,
   "services": [
     "sumcoind",
-    "insight-sum-api",
-    "insight-sum-ui",
+    "insight-api-sumcoin",
+    "insight-ui-sumcoin",
     "web"
   ],
   "servicesConfig": {
@@ -66,10 +66,10 @@ cat << EOF > sumcore-node.json
         "exec": "./sumcoind"
       }
     },
-     "insight-sum-ui": {
+     "insight-ui-sumcoin": {
       "apiPrefix": "api"
      },
-    "insight-sum-api": {
+    "insight-api-sumcoin": {
       "routePrefix": "api"
     }
   }
@@ -100,5 +100,6 @@ EOF
 
 cd ~/sumcoin-explorer
 
-echo "Start the block explorer, open in your browser http://server_ip:3001"
-# echo "./node_modules/bitcore-node-sumcoin/bin/bitcore-node start"
+echo "Start the block explorer, then, open in your browser http://server_ip:3001"
+
+echo "./node_modules/bitcore-node-sumcoin/bin/bitcore-node start"
