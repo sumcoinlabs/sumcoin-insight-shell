@@ -36,17 +36,17 @@ sudo apt-get install -y mongodb-org
 sudo service mongod start
 
 # install sumcoin version of bitcore
-npm install bitcore-node-sumcoin
+npm install sumcore-node
 
 # create bitcore node
-./node_modules/bitcore-node-sumcoin/bin/bitcore-node create sumcoin-explorer
-cd sumcoin-explorer
+./node_modules/sumcore-node/bin/sumcore-node create insight-sumcoin
+cd insight-sumcoin
 
 wget -N https://github.com/sumcoinlabs/sumcoin/archive/v0.16.1.zip -O binary.zip
 unzip -o binary.zip
 
 # install insight api/ui
-../node_modules/bitcore-node-sumcoin/bin/bitcore-node install sumcoinlabs/insight-api-sumcoin sumcoinlabs/insight-ui-sumcoin
+../node_modules/sumcore-node/bin/sumcore-node install sumcoinlabs/insight-sum-api sumcoinlabs/insight-sum-ui
 
 # create sumcore config file for sumcore
 cat << EOF > sumcore-node.json
@@ -55,8 +55,8 @@ cat << EOF > sumcore-node.json
   "port": 3001,
   "services": [
     "sumcoind",
-    "insight-api-sumcoin",
-    "insight-ui-sumcoin",
+    "insight-sum-api",
+    "insight-sum-ui",
     "web"
   ],
   "servicesConfig": {
@@ -66,10 +66,10 @@ cat << EOF > sumcore-node.json
         "exec": "./sumcoind"
       }
     },
-     "insight-ui-sumcoin": {
+     "insight-sum-ui": {
       "apiPrefix": "api"
      },
-    "insight-api-sumcoin": {
+    "insight-sum-api": {
       "routePrefix": "api"
     }
   }
@@ -100,6 +100,6 @@ EOF
 
 cd ~/sumcoin-explorer
 
-echo "Start the block explorer, then, open in your browser http://server_ip:3001"
-
-echo "./node_modules/bitcore-node-sumcoin/bin/bitcore-node start"
+echo "Start the insight block explorer, then, open in your browser http://server_ip:3001"
+echo "Run this command to start insight explorer"
+echo "./node_modules/sumcore-node/bin/sumcore-node start"
