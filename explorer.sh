@@ -39,8 +39,8 @@ sudo service mongod start
 npm install sumcore-node
 
 # create bitcore node
-./node_modules/sumcore-node/bin/sumcore-node create insight-sumcoin
-cd insight-sumcoin
+./node_modules/sumcore-node/bin/sumcore-node create insight
+cd insight
 
 wget -N https://github.com/sumcoinlabs/sumcoin/archive/v0.16.1.zip -O binary.zip
 unzip -o binary.zip
@@ -100,6 +100,8 @@ EOF
 
 cd ~/sumcoin-explorer
 
+echo "Navigate to path of insight"
+echo "cd ex/node_modules/sumcore-node/bin/"
 echo "Start the insight block explorer, then, open in your browser http://server_ip:3001"
-echo "Run this command to start insight explorer"
-echo "./node_modules/sumcore-node/bin/sumcore-node start"
+echo "Run this command from path to start insight explorer"
+echo "./sumcore-node start"
